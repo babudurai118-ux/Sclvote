@@ -352,7 +352,10 @@ const PHASE_ACCENTS = { "SPL": { left:"#3b82f6", right:"#8b5cf6", title:"#818cf8
 const STAGES = ["SPL","Culturals Leader","Sports Leader"];
 const ALL_CODES = new Set(['08c01', '08c02', '08c03', '08c04', '08c05', '08c06', '08c07', '08c08', '08c09', '08c10', '08c11', '08c12', '08c13', '08c14', '08c15', '08c16', '08c17', '08c18', '08c19', '08c20', '08c21', '08c22', '08c23', '08c24', '08c25', '08c26', '08c27', '08c28', '08c29', '08d30', '08d31', '08d32', '08d33', '08d34', '08d35', '08d36', '08d37', '08d38', '08d39', '08d40', '08d41', '08d42', '08d43', '08d44', '08d45', '08d46', '08d47', '08d48', '08d49', '08d50', '08d51', '08d52', '08d53', '08d54', '08d55', '08d56', '08d57', '08d58', '08e59', '08e60', '08e61', '08e62', '08e63', '08e64', '08e65', '08e66', '08e67', '08e68', '08e69', '08e70', '08e71', '08e72', '08e73', '08e74', '08e75', '08e76', '08e77', '08e78', '08e79', '08e80', '08e81', '08e82', '08e83', '08e84', '08e85', '08e86', '08e87', '09c01', '09c02', '09c03', '09c04', '09c05', '09c06', '09c07', '09c08', '09c09', '09c10', '09c11', '09c12', '09c13', '09c14', '09c15', '09c16', '09c17', '09c18', '09c19', '09c20', '09c21', '09c22', '09c23', '09c24', '09c25', '09c26', '09c27', '09c28', '09c29', '09d30', '09d31', '09d32', '09d33', '09d34', '09d35', '09d36', '09d37', '09d38', '09d39', '09d40', '09d41', '09d42', '09d43', '09d44', '09d45', '09d46', '09d47', '09d48', '09d49', '09d50', '09d51', '09d52', '09d53', '09d54', '09d55', '09d56', '09d57', '09d58', '09d59', '09d60', '09e61', '09e62', '09e63', '09e64', '09e65', '09e66', '09e67', '09e68', '09e69', '09e70', '09e71', '09e72', '09e73', '09e74', '09e75', '09e76', '09e77', '09e78', '09e79', '09e80', '09e81', '09e82', '09e83', '09e84', '09e85', '09e86', '09e87', '09e88', '09e89', '09e90', '09e91', '10c01', '10c02', '10c03', '10c04', '10c05', '10c06', '10c07', '10c08', '10c09', '10c10', '10c11', '10c12', '10c13', '10c14', '10c15', '10c16', '10c17', '10c18', '10c19', '10c20', '10c21', '10c22', '10c23', '10c24', '10c25', '10c26', '10c27', '10c28', '10c29', '10c30', '10c31', '10c32', '10c33', '10c34', '10d35', '10d36', '10d37', '10d38', '10d39', '10d40', '10d41', '10d42', '10d43', '10d44', '10d45', '10d46', '10d47', '10d48', '10d49', '10d50', '10d51', '10d52', '10d53', '10d54', '10d55', '10d56', '10d57', '10d58', '10d59', '10d60', '10d61', '10d62', '10d63', '10d64', '10d65', '10d66', '10d67', '10d68', '10e69', '10e70', '10e71', '10e72', '10e73', '10e74', '10e75', '10e76', '10e77', '10e78', '10e79', '10e80', '10e81', '10e82', '10e83', '10e84', '10e85', '10e86', '10e87', '10e88', '10e89', '10e90', '10e91', '10e92', '10e93', '10e94', '10e95', '10e96', '10e97', '10e98', '10e99', '10e100', '10e101', '11b01', '11b02', '11b03', '11b04', '11b05', '11b06', '11b07', '11b08', '11b09', '11b10', '11b11', '11b12', '11b13', '11b14', '11b15', '11b16', '11b17', '11b18', '11b19', '11b20', '11b21', '11b22', '11b23', '11b24', '11b25', '11b26', '11b27', '11b28', '11b29', '11b30', '11b31', '11b32', '11b33', '11b34', '11b35', '11b36', '11b37', '11b38', '11b39', '11b40', '11d41', '11d42', '11d43', '11d44', '11d45', '11d46', '11d47', '11d48', '11d49', '11d50', '11d51', '11d52', '11d53', '11d54', '11d55', '11d56', '11d57', '11d58', '11d59', '11d60', '11d61', '11d62', '11d63', '11d64', '11d65', '11d66', '11d67', '11d68', '11d69', '11d70', '11d71', '11d72', '12b01', '12b02', '12b03', '12b04', '12b05', '12b06', '12b07', '12b08', '12b09', '12b10', '12b11', '12b12', '12b13', '12b14', '12b15', '12b16', '12b17', '12b18', '12b19', '12b20', '12b21', '12b22', '12b23', '12b24', '12d25', '12d26', '12d27', '12d28', '12d29', '12d30', '12d31', '12d32', '12d33', '12d34', '12d35', '12d36', '12d37', '12d38', '12d39', '12d40', '12d41', '12d42', '12d43', '12d44', '12d45', '12d46', '12d47', '12d48', '12d49', '12d50', '12d51', '12d52', '12d53', '12d54', '12d55', '12d56', '12d57', '12d58', '12d59', '12d60', '12d61']);
 const LS_KEY = "election_votes_v1", LS_CODES_KEY = "election_used_codes_v1", LS_PW_KEY = "election_admin_pw_v1";
-const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx2Ooe9PAWcdWfAKo3ydDODPxamn3Ly_pVFsboFz5xAeGVyOHgu9V1-sUcrZuTcJbMV/exec';
+// ===== JSONBIN CONFIG =====
+const JSONBIN_BIN_ID = "6a2ed666f5f4af5e29f0dd74";
+const JSONBIN_API_KEY = "$2a$10$afdyMIUb/BpLbOF5IN52Ruko32nRL2VqyCiHw8iEjx5YXJT33ay4C";
+const JSONBIN_BASE_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
 let auditLog = [], usedCodes = new Set(), currentCode = "", voteCounts = {}, currentPhase = "SPL", isCountingDown = false, isShowingResults = false, cdTimer = null;
 
 function initCounts() { voteCounts = {}; for (const cat of STAGES) voteCounts[cat] = [0,0]; }
@@ -371,8 +374,22 @@ function logVote(category, candidate) {
   const voteData = { ts, category, candidate, code: currentCode };
   auditLog.push(voteData);
   saveToStorage();
-  fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(voteData) })
-  .then(() => console.log("Cloud database update complete ✓"))
+  pushVotesToJsonBin();
+}
+
+function pushVotesToJsonBin() {
+  const payload = { votes: auditLog };
+  fetch(JSONBIN_BASE_URL, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Master-Key': JSONBIN_API_KEY,
+      'X-Bin-Versioning': 'false'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(data => { console.log("Cloud database update complete ✓", data); })
   .catch(err => { console.error("Cloud tracking error fallback.", err); showToast("⚠️ Cloud interface offline. Saved to browser container."); });
 }
 
@@ -507,9 +524,7 @@ function closeUndoModal() { document.getElementById("undoOverlay").style.display
 async function confirmDeleteVote(idx) {
   const row = auditLog[idx], msg = `Remove this vote entry?\n\nCategory : ${row.category}\nCandidate : ${row.candidate}\nRecorded : ${row.ts}\n\nThis will permanently deduct 1 vote.`;
   const ok = await showConfirm(msg); if (!ok) return;
-  const undoData = { ts: new Date().toLocaleString('en-GB', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false }), category: row.category, candidate: row.candidate + " (REMOVED/UNDO)", code: row.code };
-  fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(undoData) });
-  auditLog.splice(idx, 1); saveToStorage(); recomputeCounts(); openUndoModal(); showToast(`Vote for ${row.candidate} removed ✓`);
+  auditLog.splice(idx, 1); saveToStorage(); recomputeCounts(); pushVotesToJsonBin(); openUndoModal(); showToast(`Vote for ${row.candidate} removed ✓`);
 }
 
 async function purgeAll() {
@@ -531,7 +546,7 @@ function tripleBeep() { try { const ctx = getAudioCtx(), beepAt = (freq, startTi
 document.addEventListener('click', () => getAudioCtx(), { once: true }); document.addEventListener('keydown', () => getAudioCtx(), { once: true });
 
 function showCodeEntryScreen() { document.getElementById("codeInput").value = ""; document.getElementById("codeError").textContent = ""; const total = ALL_CODES.size, voted = usedCodes.size, pending = total - voted; document.getElementById("codeStats").textContent = `VOTED: ${voted} / ${total} ● PENDING: ${pending}`; showScreen("codeEntryScreen"); setTimeout(() => document.getElementById("codeInput").focus(), 80); }
-function submitCode() { const raw = document.getElementById("codeInput").value.trim().toLowerCase(), errEl = document.getElementById("codeError"); if (!raw) { errEl.textContent = "⚠ Please enter your voter code."; return; } if (!ALL_CODES.has(raw)) { errEl.textContent = "✗ Invalid code. Check and try again."; beep(300, 200); document.getElementById("codeInput").select(); return; } if (usedCodes.has(raw)) { errEl.textContent = "✗ This code has already voted."; beep(300, 200); document.getElementById("codeInput").select(); return; } currentCode = raw; errEl.textContent = ""; beep(1200, 100); currentPhase = "SPL"; renderVoting(); }
+function submitCode() { const raw = document.getElementById("codeInput").value.trim().toLowerCase().replace(/\s+/g, ''), errEl = document.getElementById("codeError"); if (!raw) { errEl.textContent = "⚠ Please enter your voter code."; return; } if (!ALL_CODES.has(raw)) { errEl.textContent = "✗ Invalid code. Check and try again."; beep(300, 200); document.getElementById("codeInput").select(); return; } if (usedCodes.has(raw)) { errEl.textContent = "✗ This code has already voted."; beep(300, 200); document.getElementById("codeInput").select(); return; } currentCode = raw; errEl.textContent = ""; beep(1200, 100); currentPhase = "SPL"; renderVoting(); }
 
 let _allCodeItems = [];
 function showCodeStatusModal() { _allCodeItems = []; ALL_CODES.forEach(code => { _allCodeItems.push({ code, voted: usedCodes.has(code) }); }); _allCodeItems.sort((a,b) => a.code.localeCompare(b.code)); const voted = usedCodes.size, total = ALL_CODES.size; document.getElementById("codeStatusSummary").textContent = `Voted: ${voted} | Pending: ${total - voted} | Total: ${total}`; document.getElementById("codeSearchInput").value = ""; renderCodeList(_allCodeItems); document.getElementById("codeStatusOverlay").style.display = "flex"; }
@@ -695,10 +710,48 @@ function setAvatar(elId, candName, bgColor) {
   }
 }
 
+function fetchVotesFromCloud() {
+  fetch(`${JSONBIN_BASE_URL}/latest`, {
+    method: 'GET',
+    headers: {
+      'X-Master-Key': JSONBIN_API_KEY
+    }
+  })
+    .then(res => res.json())
+    .then(json => {
+      const data = json.record || {};
+      if (!data.votes || !Array.isArray(data.votes)) return;
+      // Rebuild auditLog and usedCodes from JSONBin
+      const validVotes = data.votes.filter(r => r.candidate && !r.candidate.includes("REMOVED/UNDO"));
+      auditLog = validVotes;
+      // Trim and lowercase codes to avoid formatting issues
+      usedCodes = new Set(
+        validVotes
+          .map(r => r.code ? r.code.toString().trim().toLowerCase() : "")
+          .filter(c => c && ALL_CODES.has(c))
+      );
+      recomputeCounts();
+      saveToStorage();
+      // Update code stats if code entry screen is visible
+      const codeStats = document.getElementById("codeStats");
+      if (codeStats) {
+        const total = ALL_CODES.size, voted = usedCodes.size, pending = total - voted;
+        codeStats.textContent = `VOTED: ${voted} / ${total} ● PENDING: ${pending}`;
+      }
+      console.log("Cloud sync complete ✓ — " + auditLog.length + " votes loaded");
+      showToast("Cloud sync complete ✓");
+    })
+    .catch(err => {
+      console.error("Cloud fetch failed:", err);
+      showToast("⚠️ Could not sync from cloud — using local data");
+    });
+}
+
 loadCloudPhotosCache();
 applyCloudPhotos();
 fetchCloudPhotos();
 loadFromStorage();
+fetchVotesFromCloud();
 
 
 </script>

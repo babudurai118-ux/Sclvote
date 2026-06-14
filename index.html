@@ -243,6 +243,7 @@
       <button class="modal-btn blue" onclick="closeAdminModal();openCandidatePhotoModal()">🧑&nbsp;&nbsp;Change Candidate Photos</button>
       <button class="modal-btn red" onclick="closeAdminModal();purgeAll()">❌&nbsp;&nbsp;Purge All Vote Data</button>
       <button class="modal-btn gray" onclick="exportCSV()">💾&nbsp;&nbsp;Export CSV to Downloads</button>
+      <button class="modal-btn red" onclick="adminExitVoting()" style="margin-top:6px;border-top:1px solid #1e293b;padding-top:14px;">🚪&nbsp;&nbsp;Exit Voting (Close Full Screen)</button>
       <input type="file" id="logoFileInput" accept="image/*" style="display:none" onchange="handleLogoUpload(event)" />
     </div>
     <div class="modal-close"><button onclick="closeAdminModal()">Close Panel</button></div>
@@ -752,6 +753,70 @@ applyCloudPhotos();
 fetchCloudPhotos();
 loadFromStorage();
 fetchVotesFromCloud();
+
+// ===== FULLSCREEN KIOSK SYSTEM =====
+let _fsAllowExit = false;
+
+function enterFullscreen() {
+  const el = document.documentElement;
+  if (el.requestFullscreen) el.requestFullscreen();
+  else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+  else if (el.msRequestFullscreen) el.msRequestFullscreen();
+}
+
+function isFullscreen() {
+  return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+}
+
+// Called only from Admin Panel "Exit Voting" button
+function adminExitVoting() {
+  closeAdminModal();
+  _fsAllowExit = true;
+  if (document.exitFullscreen) document.exitFullscreen();
+  else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+  else if (document.msExitFullscreen) document.msExitFullscreen();
+  showToast('Voting session ended by admin');
+}
+
+// If fullscreen exits without admin permission → re-enter immediately
+function onFullscreenChange() {
+  if (!isFullscreen()) {
+    if (_fsAllowExit) {
+      _fsAllowExit = false; // consume the flag
+    } else {
+      // Not admin — silently force back into fullscreen
+      setTimeout(() => { if (!isFullscreen()) enterFullscreen(); }, 100);
+    }
+  }
+}
+
+document.addEventListener('fullscreenchange', onFullscreenChange);
+document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+document.addEventListener('mozfullscreenchange', onFullscreenChange);
+document.addEventListener('MSFullscreenChange', onFullscreenChange);
+
+// Block Escape key from working outside fullscreen API (belt-and-suspenders)
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' || e.keyCode === 27) {
+    if (!_fsAllowExit) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (!isFullscreen()) enterFullscreen();
+    }
+  }
+}, true);
+
+// Auto-enter fullscreen on first user interaction
+let _fsBootDone = false;
+function _tryBootFullscreen() {
+  if (_fsBootDone) return;
+  _fsBootDone = true;
+  if (!isFullscreen()) enterFullscreen();
+}
+document.addEventListener('click', _tryBootFullscreen, { once: true });
+document.addEventListener('keydown', _tryBootFullscreen, { once: true });
 
 
 </script>

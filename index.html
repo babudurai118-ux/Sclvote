@@ -546,10 +546,20 @@ function handleFsChange() { const isFs = !!(document.fullscreenElement || docume
 // ===== CLOUD PHOTO STORAGE (Google Drive via Apps Script) =====
 const LS_CLOUD_PHOTOS_CACHE = "election_cloud_photos_cache_v1";
 const DEFAULT_LOGO_SRC = document.getElementById("schoolLogoImg").src;
+const DEFAULT_CANDIDATE_PHOTOS = {
+  "Aashif (11-B)": "https://raw.githubusercontent.com/babudurai118-ux/Sclvote/b3d7d197163e01ea711abd1aac206cdd214116b8/Aashif.jpg",
+  "Dhanush (12-B)": "https://raw.githubusercontent.com/babudurai118-ux/Sclvote/b3d7d197163e01ea711abd1aac206cdd214116b8/Dhanush.jpg",
+  "Diwakar R (12-D)": "https://raw.githubusercontent.com/babudurai118-ux/Sclvote/b3d7d197163e01ea711abd1aac206cdd214116b8/Divakar%20r.jpg",
+  "Santhosh (11-B)": "https://raw.githubusercontent.com/babudurai118-ux/Sclvote/b3d7d197163e01ea711abd1aac206cdd214116b8/Santhosh.jpg"
+};
 let cloudPhotos = {};
 
 function loadCloudPhotosCache() {
   try { const raw = localStorage.getItem(LS_CLOUD_PHOTOS_CACHE); if (raw) cloudPhotos = JSON.parse(raw) || {}; } catch(e) { cloudPhotos = {}; }
+  // Apply default GitHub photos for any candidate not yet overridden
+  for (const [name, url] of Object.entries(DEFAULT_CANDIDATE_PHOTOS)) {
+    if (!cloudPhotos[name]) cloudPhotos[name] = url;
+  }
 }
 
 function applyCloudPhotos() {

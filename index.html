@@ -436,14 +436,14 @@ function castVote(idx) {
 }
 
 function nextPhase(done) {
-  if (done === "Sports Leader") { tripleBeep(); usedCodes.add(currentCode); saveToStorage(); currentCode = ""; startCountdown(10); } 
+  if (done === "Sports Leader") { tripleBeep(); usedCodes.add(currentCode); saveToStorage(); currentCode = ""; startCountdown(1); } 
   else { const nextCat = done === "SPL" ? "Culturals Leader" : "Sports Leader"; showTransition(nextCat); }
 }
 
 function showTransition(nextCat) {
   const overlay = document.getElementById("transitionOverlay"), label = document.getElementById("transitionLabel");
   label.textContent = "NEXT: " + nextCat.toUpperCase() + " ELECTION"; overlay.style.display = "flex";
-  const numEl = document.getElementById("transitionNum"); let t = 3; beep(800, 120); numEl.textContent = t;
+  const numEl = document.getElementById("transitionNum"); let t = 1	; beep(800, 120); numEl.textContent = t;
   const iv = setInterval(() => { t--; if (t <= 0) { clearInterval(iv); overlay.style.display = "none"; currentPhase = nextCat; renderVoting(); } else { beep(800, 120); numEl.textContent = t; } }, 1000);
 }
 
